@@ -66,7 +66,7 @@ public class ResultFragment extends Fragment {
 
                 Long total = corrent + wrong + noAnswer;
                 Long persent = (corrent*100)/total;
-                binding.txtCountTimeQuiz.setText(persent.toString());
+                binding.txtCountTimeQuiz.setText("%"+persent.toString());
                 binding.progressBarResultCount.setProgress(persent.intValue());
             }
         });
