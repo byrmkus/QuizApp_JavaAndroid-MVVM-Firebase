@@ -1,3 +1,3 @@
 # QuizApp_JavaAndroid-MVVM-Firebase</br>
 
-![Kayıt Ekranı/Register](http://www.bayramkus.com/twitterclone/AppImage/AppImage1.PNG)  
+![Kayıt Ekranı/Register](http://www.bayramkus.com/quizzApp/quizApp.gif)  
