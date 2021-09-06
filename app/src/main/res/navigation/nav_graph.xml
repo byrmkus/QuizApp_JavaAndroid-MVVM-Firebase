@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/sprashFragment">
+
+    <fragment
+        android:id="@+id/sprashFragment"
+        android:name="com.baykus.quizzapp.views.SprashFragment"
+        android:label="fragment_sprash"
+        tools:layout="@layout/fragment_sprash" >
+        <action
+            android:id="@+id/action_sprashFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_sprashFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.baykus.quizzapp.views.SignUpFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.baykus.quizzapp.views.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.baykus.quizzapp.views.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.baykus.quizzapp.views.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.baykus.quizzapp.views.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz">
+        <action
+            android:id="@+id/action_quizFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <argument
+            android:name="totalQueCount"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="quizId"
+            app:argType="string"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_quizFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.baykus.quizzapp.views.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_listFragment2"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="quizId"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
+</navigation>
